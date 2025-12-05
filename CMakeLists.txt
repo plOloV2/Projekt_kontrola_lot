@@ -12,7 +12,7 @@ set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -march=native -flto -fom
 find_package(OpenMP REQUIRED)
 
 add_executable(${PROJECT_NAME}
-
+    src/compare_string.c
     src/main.c
 )
 
@@ -20,6 +20,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
 
-target_include_directories(${PROJECT_NAME} PRIVATE include)
+target_include_directories(${PROJECT_NAME} PRIVATE inc)
 
 target_link_libraries(${PROJECT_NAME} OpenMP::OpenMP_C)
